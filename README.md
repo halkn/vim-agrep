@@ -17,6 +17,9 @@ if executable('rg')
   let &grepprg = 'rg --vimgrep --hidden'
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
+
+" write in vimrc
+nmap <Leader>a <Plug>(agrep-input)
 ```
 
 Run

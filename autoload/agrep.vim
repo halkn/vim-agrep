@@ -29,3 +29,17 @@ function! agrep#end()
   endfor
   let s:jobs = []
 endfunction
+
+function agrep#input() abort
+  let l:query = input('Agrep: ', '')
+  if empty(l:query)
+    redraw
+    return
+  endif
+  let l:list = split(l:query)
+  if len(l:list) == 1
+    call agrep#start(l:list[0])
+    return
+  endif
+  call agrep#start(l:list[0], l:list[1])
+endfunction
